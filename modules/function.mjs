@@ -80,7 +80,7 @@ export function wwFetch(city) {
             "&aqi=no"
         ).then((response) => response.json()),
     ]).then((data) => {
-        document.getElementById("infoBox");
+        document.getElementById("infoBox").innerHTML = ""
         infoBox.innerHTML += `<p>Om staden:  ${data[0].pages[0].description}</p>
     <p>Väder: ${data[1].current.temp_c}°C ${data[1].current.temp_f}°F </p>
     <img src=${data[1].current.condition.icon}> </img>
